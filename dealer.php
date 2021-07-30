@@ -62,6 +62,7 @@ register_deactivation_hook( __FILE__, 'deactivate_dealer' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
+require plugin_dir_path( __FILE__ ) . 'includes/class-page-templates.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-dealer.php';
 
 /**
@@ -74,7 +75,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-dealer.php';
  * @since    1.0.0
  */
 function run_dealer() {
-
+	
 	$plugin = new Dealer();
 	$plugin->run();
 
