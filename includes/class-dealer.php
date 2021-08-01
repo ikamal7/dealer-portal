@@ -78,8 +78,6 @@ class Dealer {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-		add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
-
 	}
 
 	/**
@@ -173,6 +171,10 @@ class Dealer {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		add_filter( 'theme_page_templates', [$this,'dealer_add_template_to_select'], 10, 4 );
+		add_filter('template_include', [$this,'change_page_template'], 99);
+
+
 
 	}
 
@@ -214,6 +216,28 @@ class Dealer {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	/**
+	 * Add "Custom" template to page attirbute template section.
+	 */
+	function dealer_add_template_to_select( $post_templates, $wp_theme, $post, $post_type ) {
+		// Add custom template named template-custom.php to select dropdown
+		$post_templates[plugin_dir_path( __FILE__ ) . 'dealer-template.php'] = __('Dealer Portal');
+
+		return $post_templates;
+	}
+	function change_page_template($template)
+	{
+		if (is_page()) {
+			$meta = get_post_meta(get_the_ID());
+	
+			if (!empty($meta['_wp_page_template'][0]) && $meta['_wp_page_template'][0] != $template) {
+				$template = $meta['_wp_page_template'][0];
+			}
+		}
+	
+		return $template;
 	}
 
 }

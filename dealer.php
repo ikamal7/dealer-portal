@@ -36,6 +36,10 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'DEALER_VERSION', '1.0.0' );
+define( 'DEALER_FILE', __FILE__ );
+define( 'DEALER_PATH', __DIR__ );
+define( 'DEALER_URL', plugins_url( '', DEALER_FILE ) );
+define( 'DEALER_ASSETS', DEALER_URL . '/assets' );
 
 /**
  * The code that runs during plugin activation.
@@ -62,8 +66,8 @@ register_deactivation_hook( __FILE__, 'deactivate_dealer' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-page-templates.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-dealer.php';
+require plugin_dir_path( __FILE__ ) . 'functions.php';
 
 /**
  * Begins execution of the plugin.
