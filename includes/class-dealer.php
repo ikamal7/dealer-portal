@@ -236,6 +236,7 @@ class Dealer {
 			if (!empty($meta['_wp_page_template'][0]) && $meta['_wp_page_template'][0] != $template) {
 				$template = $meta['_wp_page_template'][0];
 			}
+			return $template;
 		}
 	
 		return $template;

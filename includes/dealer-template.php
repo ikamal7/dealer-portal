@@ -54,7 +54,12 @@ $current_url = get_permalink( $obj_id );
         </div>
     </div>
 </div>
+<?php else: ?>
+
+    <?php echo do_shortcode('[gravityform action="login" login_redirect="'. home_url('/dealer-portal') .'"]'); ?>
+
 <?php endif; ?>
+
 
 <?php
 get_footer();
