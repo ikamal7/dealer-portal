@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://kamal.pw/
+ * @link       http://pureandgentleshop.com/
  * @since      1.0.0
  *
  * @package    Dealer
@@ -224,6 +224,7 @@ class Dealer {
 	function dealer_add_template_to_select( $post_templates, $wp_theme, $post, $post_type ) {
 		// Add custom template named template-custom.php to select dropdown
 		$post_templates[plugin_dir_path( __FILE__ ) . 'dealer-template.php'] = __('Dealer Portal');
+		$post_templates[plugin_dir_path( __FILE__ ) . 'sr-template.php'] = __('SR Portal');
 
 		return $post_templates;
 	}

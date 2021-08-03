@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://kamal.pw/
+ * @link       http://pureandgentleshop.com/
  * @since      1.0.0
  *
  * @package    Dealer
@@ -74,7 +74,7 @@ class Dealer_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/dealer-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( 'bootstrap-5', '//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array(), $this->version, 'all' );
+		// wp_enqueue_style( 'bootstrap-5', '//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -98,7 +98,7 @@ class Dealer_Public {
 		 */
 
 		wp_enqueue_script( 'bootstrap-bundle', '//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), $this->version, true );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dealer-public.js', array( 'jquery' ), $this->version, true );
+		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dealer-public.js', array( 'jquery' ), $this->version, true );
 
 	}
 

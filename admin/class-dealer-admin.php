@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://kamal.pw/
+ * @link       http://pureandgentleshop.com/
  * @since      1.0.0
  *
  * @package    Dealer

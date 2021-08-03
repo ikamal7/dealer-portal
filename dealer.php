@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://kamal.pw/
+ * @link              http://pureandgentleshop.com/
  * @since             1.0.0
  * @package           Dealer
  *
  * @wordpress-plugin
  * Plugin Name:       Dealer
- * Plugin URI:        https://kamal.pw/
+ * Plugin URI:        http://pureandgentleshop.com/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
- * Author:            Kanak & Kamal
- * Author URI:        https://kamal.pw/
+ * Author:            Pure and Gentle Shop
+ * Author URI:        http://pureandgentleshop.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       dealer

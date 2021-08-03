@@ -18,23 +18,26 @@ $current_url = get_permalink( $obj_id );
                     <a class="nav-link" href="<?php echo $current_url. add_query_arg(['dp' => 'add-sr']); ?>">Add new Sales representative</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">List All SR</a>
+                    <a class="nav-link" href="<?php echo $current_url. add_query_arg(['dp' => 'list-sr']); ?>">List All SR</a>
                 </li>
             </ul>
         </div>
         <div class="col-8">
-            <?php 
+            <?php
             $get_page = isset($_GET['dp']) ? $_GET['dp'] :'';
             switch ($get_page){
                 case 'dashboard':
                     dealer_get_template_part('templates/dashboard'); 
-                break;
+                    break;
                 case 'add-sr':
                     dealer_get_template_part('templates/add-sr');
-                break;
+                    break;
+                case 'list-sr':
+                    dealer_get_template_part('templates/list-sr');
+                    break;
                 default:
-                dealer_get_template_part('templates/dashboard'); 
-                break;
+                    dealer_get_template_part('templates/dashboard'); 
+                    break;
             }
             ?>
         </div>
