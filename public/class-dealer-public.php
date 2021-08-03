@@ -97,8 +97,8 @@ class Dealer_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( 'bootstrap-bundle', '//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), $this->version, true );
-		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dealer-public.js', array( 'jquery' ), $this->version, true );
+		// wp_enqueue_script( 'bootstrap-bundle', '//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dealer-public.js', array( 'jquery' ), $this->version, true );
 
 	}
 
