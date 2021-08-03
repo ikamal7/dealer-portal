@@ -103,6 +103,7 @@ class Dealer_Admin {
 	public function add_new_user_role()
 	{
 		add_role( 'dealer', 'Dealer', 'manage_options' );
+		add_role( 'sales_r', 'Sales representative', 'manage_options' );
 	}
 
 }

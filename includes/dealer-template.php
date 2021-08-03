@@ -6,7 +6,18 @@
 get_header();
 $obj_id = get_queried_object_id();
 $current_url = get_permalink( $obj_id );
+
 ?>
+<?php if(is_user_logged_in()):
+    $user = wp_get_current_user();
+    $valid_roles = [ 'administrator', 'dealer' ];
+    $the_roles = array_intersect( $valid_roles, $user->roles );
+    if(empty( $the_roles )){
+        wp_redirect( home_url('/' ) );
+        exit;
+    }
+    ?>
+
 <div class="container">
     <div class="row">
         <div class="col-4">
@@ -43,7 +54,7 @@ $current_url = get_permalink( $obj_id );
         </div>
     </div>
 </div>
-
+<?php endif; ?>
 
 <?php
 get_footer();
