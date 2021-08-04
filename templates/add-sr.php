@@ -15,6 +15,13 @@
             $user->set_role( $role );
             add_user_meta($userid, 'dealer', $dealeid);
             $notice = __( 'SR created');
+            $message = "You are added in sales represntative.";
+            $message .= "username: {$username}";
+            $message .= "password: {$sr_password}";
+            $message .= "You can now login with username and password";
+            $message .= "{}";
+            $headers = array();
+            wp_mail($email, 'Sales Representative added', $message, $headers);
         }else{
             $notice = __('User already exists');
         }

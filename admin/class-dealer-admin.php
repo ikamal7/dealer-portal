@@ -105,7 +105,7 @@ class Dealer_Admin {
 	public function add_new_user_role()
 	{
 		add_role( 'dealer', 'Dealer', 'manage_options' );
-		add_role( 'sales_r', 'Sales representative', 'manage_options' );
+		add_role( 'sales_r', 'Sales representative', 'read' );
 	}
 
 	function my_login_redirect( $redirect_to, $request, $user ) {
@@ -116,6 +116,10 @@ class Dealer_Admin {
 				// redirect them to the default place
 				$dealer_page = get_page_template_link(DEALER_PATH . '/includes/dealer-template.php');
 				return $dealer_page;
+			}elseif ( in_array( 'sales_r', $user->roles ) ) {
+				// redirect them to the default place
+				$sr_page = get_page_template_link(DEALER_PATH . '/includes/sr-template.php');
+				return $sr_page;
 			} else {
 				return home_url();
 			}
