@@ -230,7 +230,7 @@ class Dealer {
 	}
 	function change_page_template($template)
 	{
-		if (is_page()) {
+		if (is_page('dealer-portal')) {
 			$meta = get_post_meta(get_the_ID());
 	
 			if (!empty($meta['_wp_page_template'][0]) && $meta['_wp_page_template'][0] != $template) {
